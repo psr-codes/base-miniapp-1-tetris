@@ -23,15 +23,15 @@ export async function GET() {
       splashImageUrl: minikitConfig.miniapp.splashImageUrl,
       splashBackgroundColor: minikitConfig.miniapp.splashBackgroundColor,
       webhookUrl: minikitConfig.miniapp.webhookUrl,
-      screenshotUrls: minikitConfig.miniapp.screenshotUrls,
+      screenshotUrls: [...minikitConfig.miniapp.screenshotUrls],
       primaryCategory: minikitConfig.miniapp.primaryCategory,
-      tags: minikitConfig.miniapp.tags,
+      tags: [...minikitConfig.miniapp.tags],
       heroImageUrl: minikitConfig.miniapp.heroImageUrl,
       tagline: minikitConfig.miniapp.tagline,
       ogTitle: minikitConfig.miniapp.ogTitle,
       ogDescription: minikitConfig.miniapp.ogDescription,
       ogImageUrl: minikitConfig.miniapp.ogImageUrl,
-      noindex: minikitConfig.miniapp.noindex,
+      noindex: minikitConfig.miniapp.noindex ? "true" : undefined,
     }),
   };
 
