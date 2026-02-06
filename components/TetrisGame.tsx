@@ -184,41 +184,8 @@ export default function TetrisGame() {
                 </button>
               </div>
 
-              {/* Stats Bar */}
-              <div className="flex items-center justify-center gap-6 py-2 bg-black/20 mx-2 rounded-lg">
-                <div className="text-center">
-                  <div className="text-lg font-bold text-white">{points}</div>
-                  <div className="text-[9px] text-white/50 uppercase">
-                    Score
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/10" />
-                <div className="text-center">
-                  <div className="text-lg font-bold text-white">
-                    {linesCleared}
-                  </div>
-                  <div className="text-[9px] text-white/50 uppercase">
-                    Lines
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/10" />
-                <div className="text-center">
-                  <div className="text-lg font-bold text-white">{level}</div>
-                  <div className="text-[9px] text-white/50 uppercase">
-                    Level
-                  </div>
-                </div>
-                <div className="w-px h-8 bg-white/10" />
-                <div className="text-center">
-                  <div className="text-lg font-bold text-yellow-400">
-                    {highScore}
-                  </div>
-                  <div className="text-[9px] text-white/50 uppercase">Best</div>
-                </div>
-              </div>
-
-              {/* Main Game Area + Controls together */}
-              <div className="flex-1 flex items-start justify-center gap-2 py-2 min-h-0">
+              {/* Main Game Area */}
+              <div className="flex-1 flex items-start justify-center gap-3 py-2 min-h-0">
                 {/* Game Board + Controls Column */}
                 <div className="flex flex-col items-center">
                   {/* Game Board */}
@@ -275,13 +242,57 @@ export default function TetrisGame() {
                   </div>
                 </div>
 
-                {/* Next Pieces Sidebar */}
-                <div className="flex flex-col items-center">
-                  <div className="text-[8px] text-white/40 uppercase mb-1">
-                    Next
+                {/* Right Sidebar: Next Pieces (top) + Stats (bottom) */}
+                <div className="flex flex-col items-center justify-start self-stretch">
+                  {/* Next Pieces - Top */}
+                  <div className="flex flex-col items-center  max-h-[400px]">
+                    <div className="text-[8px] text-white/40 uppercase">
+                      Next
+                    </div>
+                    <div className="next-sidebar bg-black/30 rounded-lg ">
+                      <PieceQueue />
+                    </div>
                   </div>
-                  <div className="next-sidebar bg-black/30 rounded-lg">
-                    <PieceQueue />
+
+                  {/* Stats - Bottom (aligned with controls) */}
+                  <div className="flex flex-col gap-1 bg-black/30 rounded-lg p-2 min-w-[60px]">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="text-center flex-1">
+                        <div className="text-sm font-bold text-white">
+                          {points}
+                        </div>
+                        <div className="text-[7px] text-white/50 uppercase">
+                          Score
+                        </div>
+                      </div>
+                      <div className="text-center flex-1">
+                        <div className="text-sm font-bold text-white">
+                          {linesCleared}
+                        </div>
+                        <div className="text-[7px] text-white/50 uppercase">
+                          Lines
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-px bg-white/10" />
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="text-center flex-1">
+                        <div className="text-sm font-bold text-white">
+                          {level}
+                        </div>
+                        <div className="text-[7px] text-white/50 uppercase">
+                          Level
+                        </div>
+                      </div>
+                      <div className="text-center flex-1">
+                        <div className="text-sm font-bold text-yellow-400">
+                          {highScore}
+                        </div>
+                        <div className="text-[7px] text-white/50 uppercase">
+                          Best
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
