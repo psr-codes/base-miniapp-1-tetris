@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { minikitConfig, ROOT_URL } from "@/minikit.config";
+import { minikitConfig, ROOT_URL } from "@/app/minikit.config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
