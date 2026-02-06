@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [minikitConfig.miniapp.ogImageUrl],
     },
     other: {
+      "base:app_id": "69863d06785494a0fe86a596",
       "fc:miniapp": JSON.stringify({
         version: "next",
         imageUrl: `${ROOT_URL}/og-image.png`,
