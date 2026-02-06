@@ -4,10 +4,9 @@ export const ROOT_URL = "https://tetris-onchain.vercel.app";
 
 export const minikitConfig = {
   accountAssociation: {
-    // These will be added after using the Base Build Account Association tool
-    header: "",
-    payload: "",
-    signature: "",
+    "header": "eyJmaWQiOjkzNTU1MSwidHlwZSI6ImF1dGgiLCJrZXkiOiIweGM1OTU2Njc0YzBEYWM2MjEwNjA4OTE1OTc0ZEI0OWI2MDUyMTM5MDYifQ",
+    "payload": "eyJkb21haW4iOiJ0ZXRyaXMtb25jaGFpbi52ZXJjZWwuYXBwIn0",
+    "signature": "1GvRVRHIfTMAuo0AuEDYZMtMG6UH04alUav+KfVhRURGhHXt3OCQet/TMRb2S0bmG+G48uZ0PN+BYOgRd7/9wxw="
   },
   miniapp: {
     version: "1",
