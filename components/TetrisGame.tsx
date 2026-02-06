@@ -218,7 +218,7 @@ export default function TetrisGame() {
               </div>
 
               {/* Main Game Area */}
-              <div className="flex-1 flex items-start justify-center gap-2 px-2 py-1 min-h-0 overflow-hidden">
+              <div className="flex-1 flex items-start justify-center  py-1 min-h-0 overflow-hidden">
                 {/* Game Board */}
                 <div className="game-board-wrapper">
                   <Gameboard />
