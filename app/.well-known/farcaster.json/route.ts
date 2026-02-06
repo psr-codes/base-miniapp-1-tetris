@@ -1,19 +1,9 @@
 import { minikitConfig, ROOT_URL } from "@/minikit.config";
 
-function withValidProperties(
-  properties: Record<string, undefined | string | string[]>
-) {
-  return Object.fromEntries(
-    Object.entries(properties).filter(([, value]) =>
-      Array.isArray(value) ? value.length > 0 : !!value
-    )
-  );
-}
-
 export async function GET() {
-  const manifest = {
+  const config = {
     accountAssociation: minikitConfig.accountAssociation,
-    miniapp: withValidProperties({
+    miniapp: {
       version: minikitConfig.miniapp.version,
       name: minikitConfig.miniapp.name,
       subtitle: minikitConfig.miniapp.subtitle,
@@ -31,9 +21,9 @@ export async function GET() {
       ogTitle: minikitConfig.miniapp.ogTitle,
       ogDescription: minikitConfig.miniapp.ogDescription,
       ogImageUrl: minikitConfig.miniapp.ogImageUrl,
-      noindex: minikitConfig.miniapp.noindex ? "true" : undefined,
-    }),
+      noindex: minikitConfig.miniapp.noindex,
+    },
   };
 
-  return Response.json(manifest);
+  return Response.json(config);
 }
