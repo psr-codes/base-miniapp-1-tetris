@@ -33,12 +33,12 @@ body {
   touch-action: manipulation;
 }
 
-/* Tetris Block */
+/* Tetris Block - Responsive sizing */
 .game-block {
   margin: 0;
   padding: 0;
-  width: clamp(14px, 7vw, 28px);
-  height: clamp(14px, 7vw, 28px);
+  width: clamp(12px, 4.5vw, 22px);
+  height: clamp(12px, 4.5vw, 22px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 2px;
 }
@@ -49,6 +49,8 @@ body {
   border: 2px solid rgba(100, 100, 180, 0.4);
   border-radius: 8px;
   padding: 4px;
+  max-height: calc(100vh - 220px);
+  overflow: hidden;
 }
 
 .game-board-wrapper table {
@@ -61,14 +63,14 @@ body {
 
 /* Next Pieces Sidebar */
 .next-sidebar {
-  transform: scale(0.5);
+  transform: scale(0.45);
   transform-origin: top center;
 }
 
-/* Control Buttons */
+/* Control Buttons - Responsive */
 .ctrl-btn {
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 12vw, 48px);
+  height: clamp(40px, 12vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +78,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   color: white;
-  font-size: 20px;
+  font-size: clamp(16px, 5vw, 20px);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -86,8 +88,8 @@ body {
 }
 
 .ctrl-btn-action {
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 12vw, 48px);
+  height: clamp(40px, 12vw, 48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +97,7 @@ body {
   border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 12px;
   color: white;
-  font-size: 24px;
+  font-size: clamp(18px, 5vw, 24px);
 }
 
 .ctrl-btn-action:active {
@@ -104,16 +106,16 @@ body {
 }
 
 .ctrl-btn-sm {
-  width: 40px;
-  height: 40px;
+  width: clamp(36px, 10vw, 40px);
+  height: clamp(36px, 10vw, 40px);
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  color: white/80;
-  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(12px, 4vw, 16px);
 }
 
 .ctrl-btn-sm:active {
@@ -121,8 +123,8 @@ body {
 }
 
 .ctrl-btn-drop {
-  width: 56px;
-  height: 56px;
+  width: clamp(44px, 14vw, 56px);
+  height: clamp(44px, 14vw, 56px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +132,7 @@ body {
   border: 2px solid rgba(59, 130, 246, 0.5);
   border-radius: 14px;
   color: white;
-  font-size: 28px;
+  font-size: clamp(20px, 6vw, 28px);
   font-weight: bold;
 }
 

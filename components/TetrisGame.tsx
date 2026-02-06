@@ -218,27 +218,27 @@ export default function TetrisGame() {
               </div>
 
               {/* Main Game Area */}
-              <div className="flex-1 flex  items-start justify-center  pt-5 gap-[1px] min-h-0">
+              <div className="flex-1 flex items-start justify-center gap-2 px-2 py-1 min-h-0 overflow-hidden">
                 {/* Game Board */}
-                <div className="game-board-wrapper mt-5 ml-6">
+                <div className="game-board-wrapper">
                   <Gameboard />
                 </div>
 
                 {/* Next Pieces Sidebar */}
-                <div className="flex flex-col  items-center pt-5 m-0">
-                  <div className="text-[9px] text-white/40 uppercase mb-1">
+                <div className="flex flex-col items-center">
+                  <div className="text-[8px] text-white/40 uppercase mb-1">
                     Next
                   </div>
-                  <div className="next-sidebar bg-black/30 rounded-lg ">
+                  <div className="next-sidebar bg-black/30 rounded-lg">
                     <PieceQueue />
                   </div>
                 </div>
               </div>
 
               {/* Controls - 2 rows, centered */}
-              <div className="pb-4 pt-2">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="flex items-center gap-2">
+              <div className="pb-2 pt-1 flex-shrink-0">
+                <div className="flex flex-col items-center gap-1">
+                  <div className="flex items-center gap-1">
                     <button
                       onClick={() => controller.moveLeft()}
                       className="ctrl-btn"
@@ -258,7 +258,7 @@ export default function TetrisGame() {
                       →
                     </button>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
                     <button
                       onClick={() => controller.flipClockwise()}
                       className="ctrl-btn-action"
