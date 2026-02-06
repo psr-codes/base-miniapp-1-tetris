@@ -217,11 +217,62 @@ export default function TetrisGame() {
                 </div>
               </div>
 
-              {/* Main Game Area */}
-              <div className="flex-1 flex items-start justify-center  py-1 min-h-0 overflow-hidden">
-                {/* Game Board */}
-                <div className="game-board-wrapper">
-                  <Gameboard />
+              {/* Main Game Area + Controls together */}
+              <div className="flex-1 flex items-start justify-center gap-2 py-2 min-h-0">
+                {/* Game Board + Controls Column */}
+                <div className="flex flex-col items-center">
+                  {/* Game Board */}
+                  <div className="game-board-wrapper">
+                    <Gameboard />
+                  </div>
+
+                  {/* Controls - directly below game */}
+                  <div className="mt-2 flex flex-col items-center gap-1">
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => controller.moveLeft()}
+                        className="ctrl-btn"
+                      >
+                        ←
+                      </button>
+                      <button
+                        onClick={() => controller.moveDown()}
+                        className="ctrl-btn"
+                      >
+                        ↓
+                      </button>
+                      <button
+                        onClick={() => controller.moveRight()}
+                        className="ctrl-btn"
+                      >
+                        →
+                      </button>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => controller.flipClockwise()}
+                        className="ctrl-btn-action"
+                      >
+                        ↻
+                      </button>
+                      <button
+                        onClick={() =>
+                          state === "PAUSED"
+                            ? controller.resume()
+                            : controller.pause()
+                        }
+                        className="ctrl-btn-sm"
+                      >
+                        {state === "PAUSED" ? "▶" : "⏸"}
+                      </button>
+                      <button
+                        onClick={() => controller.hardDrop()}
+                        className="ctrl-btn-drop"
+                      >
+                        ⬇
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Next Pieces Sidebar */}
@@ -231,56 +282,6 @@ export default function TetrisGame() {
                   </div>
                   <div className="next-sidebar bg-black/30 rounded-lg">
                     <PieceQueue />
-                  </div>
-                </div>
-              </div>
-
-              {/* Controls - 2 rows, centered */}
-              <div className="pb-2 pt-1 flex-shrink-0">
-                <div className="flex flex-col items-center gap-1">
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => controller.moveLeft()}
-                      className="ctrl-btn"
-                    >
-                      ←
-                    </button>
-                    <button
-                      onClick={() => controller.moveDown()}
-                      className="ctrl-btn"
-                    >
-                      ↓
-                    </button>
-                    <button
-                      onClick={() => controller.moveRight()}
-                      className="ctrl-btn"
-                    >
-                      →
-                    </button>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => controller.flipClockwise()}
-                      className="ctrl-btn-action"
-                    >
-                      ↻
-                    </button>
-                    <button
-                      onClick={() =>
-                        state === "PAUSED"
-                          ? controller.resume()
-                          : controller.pause()
-                      }
-                      className="ctrl-btn-sm"
-                    >
-                      {state === "PAUSED" ? "▶" : "⏸"}
-                    </button>
-                    <button
-                      onClick={() => controller.hardDrop()}
-                      className="ctrl-btn-drop"
-                    >
-                      ⬇
-                    </button>
                   </div>
                 </div>
               </div>
