@@ -52,7 +52,7 @@ body {
   border-radius: 2px;
 }
 
-/* Game Board Wrapper */
+/* Game Board Wrapper - clips top 2 rows for shorter viewports */
 .game-board-wrapper {
   background: rgba(0, 0, 0, 0.6);
   border: 2px solid rgba(100, 100, 180, 0.4);
@@ -63,8 +63,11 @@ body {
   overflow: hidden;
 }
 
+/* Hide top 2 rows of the game board (pieces spawn there anyway) */
 .game-board-wrapper table {
   border-collapse: collapse;
+  /* Move table up to hide top 1 row - each row height matches block size */
+  margin-top: calc(-1 * clamp(16px, min(4vw, 3vh), 28px));
 }
 
 .game-board-wrapper td {
